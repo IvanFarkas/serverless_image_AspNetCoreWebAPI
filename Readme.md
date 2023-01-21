@@ -8,6 +8,12 @@ For more information about how the Amazon.Lambda.AspNetCoreServer package works 
 
 ## .NET 6 configuration
 
+### global.json
+
+```json
+"sdk": { "version": "6.0.405" }
+```
+
 ### *.csproj 
 
 ```xml
@@ -50,6 +56,47 @@ CPU architecture: 8
 CPU variant	: 0x3
 CPU part	: 0xd0c
 CPU revision	: 1
+```
+
+## .NET 7 configuration
+
+### global.json
+
+```json
+"sdk": { "version": "7.0.102" }
+```
+
+### *.csproj 
+
+```xml
+<TargetFramework>net7.0</TargetFramework>
+```
+
+### aws-lambda-tools-defaults.json
+
+```xml
+"framework": "net7.0",
+"function-runtime": "dotnet7",
+"function-architecture": "arm64",
+```
+
+### Dockerfile
+
+```Dockerfile
+FROM public.ecr.aws/lambda/dotnet:7
+```
+
+### [AWS SAM Lambda Output](https://0s785ktk0i.execute-api.us-east-1.amazonaws.com)
+
+```json
+{ "message": "Internal Server Error" }
+```
+
+### AWS Log
+
+```
+RequestId: b5d40869-04bc-452b-8d82-ffa4134d670c Error: fork/exec /lambda-entrypoint.sh: exec format error
+Runtime.InvalidEntrypoint
 ```
 
 ### Configuring for API Gateway HTTP API ###
