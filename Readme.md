@@ -6,6 +6,52 @@ This project shows how to run an ASP.NET Core Web API project as an AWS Lambda e
 For more information about how the Amazon.Lambda.AspNetCoreServer package works and how to extend its behavior view its [README](https://github.com/aws/aws-lambda-dotnet/blob/master/Libraries/src/Amazon.Lambda.AspNetCoreServer/README.md) file in GitHub.
 
 
+## .NET 6 configuration
+
+### *.csproj 
+
+```xml
+<TargetFramework>net6.0</TargetFramework>
+```
+
+### aws-lambda-tools-defaults.json
+
+```xml
+"framework": "net6.0",
+"function-runtime": "dotnet6",
+"function-architecture": "arm64",
+```
+
+### Dockerfile
+
+```Dockerfile
+FROM public.ecr.aws/lambda/dotnet:6
+```
+
+### [AWS SAM Lambda Output](https://0s785ktk0i.execute-api.us-east-1.amazonaws.com)
+
+```
+AWS SAM WebAPI (.NET 6.0.10, amzn.2-arm64, Arm64, Arm64) on AWS Lambda with SAM
+
+processor	: 0
+BogoMIPS	: 243.75
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp ssbs
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x3
+CPU part	: 0xd0c
+CPU revision	: 1
+
+processor	: 1
+BogoMIPS	: 243.75
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp ssbs
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x3
+CPU part	: 0xd0c
+CPU revision	: 1
+```
+
 ### Configuring for API Gateway HTTP API ###
 
 API Gateway supports the original REST API and the new HTTP API. In addition HTTP API supports 2 different

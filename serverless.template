@@ -8,8 +8,8 @@
     "AspNetCoreFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Description": "AWS Lambda with SAM - .NET 6",
-        "VersionDescription": ".NET 6",
+        "Description": "AWS Lambda with SAM",
+        "VersionDescription": "AWS Lambda with SAM",
         "Architectures" : ["arm64"],
         "PackageType": "Image",
         "ImageConfig": {
@@ -42,7 +42,7 @@
         },
         "Tags": {
           "Owner": "3D HD Soft LLC",
-          "AppName": "AWS Lambda with SAM - .NET 6"
+          "AppName": "AWS Lambda with SAM"
         }
       },
       "Metadata": {
