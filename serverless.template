@@ -10,7 +10,7 @@
       "Properties": {
         "Description": "AWS Lambda with SAM",
         "VersionDescription": "AWS Lambda with SAM",
-        "Architectures" : ["arm64"],
+        "Architectures" : ["x86_64"],
         "PackageType": "Image",
         "ImageConfig": {
           "Command": [
